@@ -49,7 +49,7 @@ describe MapQuest do
           :location => 'London, UK'
       }
 
-      stub_request(:get, 'www.mapquestapi.com/geocoding/v1/address').
+      stub_request(:get, 'open.mapquestapi.com/geocoding/v1/address').
           with(:query => query).
           to_return(:body => fixture)
 

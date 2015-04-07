@@ -27,7 +27,7 @@ describe MapQuest::Services::Geocoding do
             :key => 'xxx',
             :location => 'London, UK'
         }
-        stub_request(:get, 'www.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
+        stub_request(:get, 'open.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
       end
 
       its(:providedLocation) { should == {:location => 'London, UK'} }
@@ -43,7 +43,7 @@ describe MapQuest::Services::Geocoding do
             :location => 'London, UK',
             :thumbMaps => false
         }
-        stub_request(:get, 'www.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
+        stub_request(:get, 'open.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
       end
 
       it { geocoding.options[:thumbMaps].should == false }
@@ -59,7 +59,7 @@ describe MapQuest::Services::Geocoding do
             :location => 'London, UK',
             :maxResults => 2
         }
-        stub_request(:get, 'www.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
+        stub_request(:get, 'open.mapquestapi.com/geocoding/v1/address').with(:query => query).to_return(:body => fixture)
       end
 
       it { geocoding.options[:maxResults].should == 2 }
@@ -85,7 +85,7 @@ describe MapQuest::Services::Geocoding do
             :key => 'xxx',
             :location => ['40.0755', '-76.329999'].join(',')
         }
-        stub_request(:get, 'www.mapquestapi.com/geocoding/v1/reverse').with(:query => query).to_return(:body => fixture)
+        stub_request(:get, 'open.mapquestapi.com/geocoding/v1/reverse').with(:query => query).to_return(:body => fixture)
       end
 
     end

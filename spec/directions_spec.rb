@@ -28,7 +28,7 @@ describe MapQuest::Services::Directions do
             :from => 'Lancaster,PA',
             :to => 'York,PA'
         }
-        stub_request(:get, 'www.mapquestapi.com/directions/v1/route').with(:query => query).to_return(:body => fixture)
+        stub_request(:get, 'open.mapquestapi.com/directions/v1/route').with(:query => query).to_return(:body => fixture)
       end
     end
 
